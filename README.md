@@ -124,20 +124,6 @@ Note: Running organize_project.py will move files into subfolders (e.g., noteboo
 
 Predictions are logged to `prediction_log.csv` in the Streamlit app. Monitor for drift by analyzing shifts in sentiment distribution over time. Retrain periodically with new data.
 
-## Contributing
-
-1. Fork the repo.
-2. Create a feature branch: `git checkout -b feature/new-feature`.
-3. Commit changes: `git commit -am 'Add new feature'`.
-4. Push: `git push origin feature/new-feature`.
-5. Submit a Pull Request.
-
-Please follow PEP8 style guidelines and add tests for new features.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - Dataset: Snap Amazon Fine Food Reviews on Kaggle.
