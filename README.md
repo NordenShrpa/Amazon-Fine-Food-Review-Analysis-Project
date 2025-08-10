@@ -31,7 +31,7 @@ Due to the data files being very large I have given  the link from which you can
 Note: look into data_download.md file 
 
 ## Step-by-step Guide: 
-'''
+<!--
 1. Prerequisites:
 # Install required packages
 pip install -r requirements.txt
@@ -74,8 +74,7 @@ python sentiment_analysis.py analyze --interactive
 python sentiment_analysis.py compute \
   --data_path new_reviews.csv \ 
   --output_path analyzed_reviews.csv
-
-'''
+-->
 
 Note: View the Gallery-Guide for a guide on how to execute the code files.
 
