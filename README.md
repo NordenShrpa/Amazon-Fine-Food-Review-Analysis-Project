@@ -31,50 +31,50 @@ Due to the data files being very large I have given  the link from which you can
 Note: look into data_download.md file 
 
 ## Step-by-step Guide: 
-<!--
-1. Prerequisites:
-# Install required packages
-pip install -r requirements.txt
 
-2. Data Preparation
-# Compute VADER sentiment scores (required for modeling)
-$ python "Machine Learning Models - Code/compute_vader_sentiment.py" 
-#### cleaned_data_with_sentiment.csv is an output datapath that is given after the execution of the python file.
+1. Prerequisites:
+  Install required packages
+  $ pip install -r requirements.txt
+
+3. Data Preparation
+  Compute VADER sentiment scores (required for modeling)
+  $ python "Machine Learning Models - Code/compute_vader_sentiment.py" 
+  cleaned_data_with_sentiment.csv is an output datapath that is given after the execution of the python file.
 
 3. Model Training:
-# Train and save the sentiment model
-python "Machine Learning Models - Code/amazon_sentiment_model.py" --data_path cleaned_data_with_sentiment.csv
-#### Output: amazon_reviews_sentiment_model.pkl (trained model)
+   Train and save the sentiment model
+  $ python "Machine Learning Models - Code/amazon_sentiment_model.py" --data_path cleaned_data_with_sentiment.csv
+  Output: amazon_reviews_sentiment_model.pkl (trained model)
 
 4. Run Streamlit Web App
-streamlit run app.py
+  $ streamlit run app.py
 
 5. SHAP Explainability (Optional)
-python shap_analysis.py \
+  $ python shap_analysis.py \
   --data_path cleaned_data_with_sentiment.csv \
   --model_path amazon_reviews_sentiment_model.pkl
-#### Generates global feature importance and local explanation plots
+   Generates global feature importance and local explanation plots
 
 6. Unsupervised Analysis (Optional)
-python unsupervised_analysis.py \
+  $ python unsupervised_analysis.py \
   --data_path cleaned_data_with_sentiment.csv
-#### Performs clustering to discover review patterns
-#### Generates cluster visualizations
+   Performs clustering to discover review patterns
+   Generates cluster visualizations
 
-7. CLI Tools
-# Single prediction
-python sentiment_analysis.py analyze \
+8. CLI Tools
+   Single prediction
+  $ python sentiment_analysis.py analyze \
   --model amazon_reviews_sentiment_model.pkl \
   --review "This product is amazing!" 
   
-# Interactive mode
-python sentiment_analysis.py analyze --interactive
+   Interactive mode
+  $ python sentiment_analysis.py analyze --interactive
 
 # Batch processing
-python sentiment_analysis.py compute \
+  $ python sentiment_analysis.py compute \
   --data_path new_reviews.csv \ 
   --output_path analyzed_reviews.csv
--->
+
 
 Note: View the Gallery-Guide for a guide on how to execute the code files.
 
