@@ -78,6 +78,27 @@ Note: look into data_download.md file
 
 Note: View the Gallery-Guide for a guide on how to execute the code files.
 
+## Features:
+
+- **Comprehensive Text Preprocessing**: Cleaning, normalization, lemmatization, and stopword removal
+- **Advanced Feature Engineering**: 
+  - Text-based features (TF-IDF vectors)
+  - Sentiment analysis using VADER (vectorized for the entire dataset)
+  - Metadata features (helpfulness ratio, text length)
+- **Multiple Model Comparison**: Evaluates various classification algorithms including:
+  - Logistic Regression
+  - Random Forest
+  - Gradient Boosting
+  - XGBoost 
+  - LightGBM
+  - CatBoost
+  - KMeans (Unsupervised) 
+- **Hyperparameter Tuning**: Optimizes model performance through grid search
+- **Model Evaluation**: Comprehensive metrics including accuracy, F1 score, precision, recall, and confusion matrix
+- **Complete Pipeline**: Includes preprocessing, feature extraction, and model in a single pipeline for easy deployment
+- **Streamlit Web Application**: Interactive interface for sentiment analysis
+- **Monitoring Dashboard**: Tracks predictions and model performance
+
 
 ### 1. Exploratory Data Analysis
 Run the Jupyter notebook for insights:
