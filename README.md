@@ -7,6 +7,8 @@
 
 This project provides a comprehensive toolkit for sentiment analysis on the Amazon Fine Food Reviews dataset. It encompasses exploratory data analysis (EDA), data preprocessing, VADER-based sentiment computation, supervised machine learning modeling, unsupervised clustering, model interpretability with SHAP, and an interactive Streamlit web application for real-time predictions. The goal is to classify reviews as positive or negative while offering insights into customer sentiments.
 
+
+
 Key features:
 - **Data Processing**: Cleaning, feature engineering, and VADER sentiment scoring.
 - **Modeling**: Binary classification using logistic regression, random forests, and optional boosted models (XGBoost, LightGBM, CatBoost).
@@ -20,21 +22,63 @@ The project follows modular design principles, with scripts organized for easy e
 
 The dataset used is the [Amazon Fine Food Reviews](https://www.kaggle.com/snap/amazon-fine-food-reviews) from Kaggle (not included in this repo due to size). It contains ~568,000 reviews with columns like `Text`, `Summary`, `Score`, and helpfulness metrics. Processed versions (e.g., `cleaned_data.csv`) are generated during execution and stored in the Data folder.
 
-## Installation
+## Instruction:  
+Due to the data files being very large I have given  the link from which you can download the dataset. 
+1. Do the Exploratory Data Analysis with the "Exploratory Data Analysis/EDA_amazon_food_review.ipynb" file using the raw reviews.csv file downloaded from the Kaggle link above.
+2. Use the Cleaned_data.csv file saved after the EDA for machine learning modeling.
+3. Run the app.py to see the web and the outcome of the project.
 
-1. Clone the repository:
-git clone https://github.com/NordenShrpa/Amazon-Fine-Food-Review-Analysis-Project.git
-cd amazon-food-reviews-sentiment-analysis
-text2. Create and activate a virtual environment (recommended):
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-text3. Install dependencies:
+Note: look into data_download.md file 
+
+## Step-by-step Guide: 
+'''
+1. Prerequisites:
+# Install required packages
 pip install -r requirements.txt
-textNote: For optional models (XGBoost, LightGBM, CatBoost), install them separately if needed: `pip install xgboost lightgbm catboost`.
 
-4. Download NLTK resources (run once):
-python -c "import nltk; nltk.download(['stopwords', 'punkt', 'wordnet', 'vader_lexicon', 'omw-1.4'])"
-text## Usage
+2. Data Preparation
+# Compute VADER sentiment scores (required for modeling)
+$ python "Machine Learning Models - Code/compute_vader_sentiment.py" 
+#### cleaned_data_with_sentiment.csv is an output datapath that is given after the execution of the python file.
+
+3. Model Training:
+# Train and save the sentiment model
+python "Machine Learning Models - Code/amazon_sentiment_model.py" --data_path cleaned_data_with_sentiment.csv
+#### Output: amazon_reviews_sentiment_model.pkl (trained model)
+
+4. Run Streamlit Web App
+streamlit run app.py
+
+5. SHAP Explainability (Optional)
+python shap_analysis.py \
+  --data_path cleaned_data_with_sentiment.csv \
+  --model_path amazon_reviews_sentiment_model.pkl
+#### Generates global feature importance and local explanation plots
+
+6. Unsupervised Analysis (Optional)
+python unsupervised_analysis.py \
+  --data_path cleaned_data_with_sentiment.csv
+#### Performs clustering to discover review patterns
+#### Generates cluster visualizations
+
+7. CLI Tools
+# Single prediction
+python sentiment_analysis.py analyze \
+  --model amazon_reviews_sentiment_model.pkl \
+  --review "This product is amazing!" 
+  
+# Interactive mode
+python sentiment_analysis.py analyze --interactive
+
+# Batch processing
+python sentiment_analysis.py compute \
+  --data_path new_reviews.csv \ 
+  --output_path analyzed_reviews.csv
+
+'''
+
+Note: View the Gallery-Guide for a guide on how to execute the code files.
+
 
 ### 1. Exploratory Data Analysis
 Run the Jupyter notebook for insights:
