@@ -32,45 +32,45 @@ Note: look into data_download.md file
 
 ## Step-by-step Guide: 
 
-1. Prerequisites:
-  Install required packages
+1. Prerequisites: __
+  Install required packages __
   $ pip install -r requirements.txt
 
-3. Data Preparation
-  Compute VADER sentiment scores (required for modeling)
-  $ python "Machine Learning Models - Code/compute_vader_sentiment.py" 
+3. Data Preparation __
+  Compute VADER sentiment scores (required for modeling) __
+  $ python "Machine Learning Models - Code/compute_vader_sentiment.py" __
   cleaned_data_with_sentiment.csv is an output datapath that is given after the execution of the python file.
 
-3. Model Training:
-   Train and save the sentiment model
-  $ python "Machine Learning Models - Code/amazon_sentiment_model.py" --data_path cleaned_data_with_sentiment.csv
+3. Model Training: __
+   Train and save the sentiment model __
+  $ python "Machine Learning Models - Code/amazon_sentiment_model.py" --data_path cleaned_data_with_sentiment.csv __
   Output: amazon_reviews_sentiment_model.pkl (trained model)
 
-4. Run Streamlit Web App
+4. Run Streamlit Web App __
   $ streamlit run app.py
 
-5. SHAP Explainability (Optional)
+5. SHAP Explainability (Optional) __
   $ python shap_analysis.py \
   --data_path cleaned_data_with_sentiment.csv \
-  --model_path amazon_reviews_sentiment_model.pkl
+  --model_path amazon_reviews_sentiment_model.pkl __
    Generates global feature importance and local explanation plots
 
-6. Unsupervised Analysis (Optional)
+6. Unsupervised Analysis (Optional) __
   $ python unsupervised_analysis.py \
-  --data_path cleaned_data_with_sentiment.csv
+  --data_path cleaned_data_with_sentiment.csv __
    Performs clustering to discover review patterns
    Generates cluster visualizations
 
-8. CLI Tools
-   Single prediction
+8. CLI Tools __
+   Single prediction __
   $ python sentiment_analysis.py analyze \
   --model amazon_reviews_sentiment_model.pkl \
   --review "This product is amazing!" 
   
-   Interactive mode
+   Interactive mode __
   $ python sentiment_analysis.py analyze --interactive
 
-# Batch processing
+# Batch processing __
   $ python sentiment_analysis.py compute \
   --data_path new_reviews.csv \ 
   --output_path analyzed_reviews.csv
