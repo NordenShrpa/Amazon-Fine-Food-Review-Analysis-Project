@@ -24,7 +24,7 @@ The dataset used is the [Amazon Fine Food Reviews](https://www.kaggle.com/snap/a
 ## Installation
 
 1. Clone the repository:
-git clone https://github.com/your-username/amazon-food-reviews-sentiment-analysis.git
+git clone https://github.com/NordenShrpa/Amazon-Fine-Food-Review-Analysis-Project.git
 cd amazon-food-reviews-sentiment-analysis
 text2. Create and activate a virtual environment (recommended):
 python -m venv venv
