@@ -116,9 +116,7 @@ The project uses a mostly flat structure in the root directory, with generated d
 
 - **README.md**: This documentation file, providing overview, installation, usage, and structure details.
 
-- **.gitignore** (if present): Specifies files/folders to ignore in Git, such as large CSVs, models, and virtual environments.
-
-Note: Running organize_project.py will move files into subfolders (e.g., notebooks/, scripts/, src/, data/processed/, models/, tests/). Update this section after reorganization if needed. Generated files like PNGs and CSVs are not version-controlled due to size.
+Note: The full project structure is in the Gallery-Guide/FilePath.png. You can view this file to understand the project structure.
 
 ## Monitoring and Concept Drift
 
